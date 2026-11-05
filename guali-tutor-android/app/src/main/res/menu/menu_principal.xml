@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_leccion"
+        android:title="@string/menu_leccion"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/opcion_abrir_leccion"
+                android:title="@string/abrir_leccion" />
+            <item
+                android:id="@+id/opcion_cerrar_leccion"
+                android:title="@string/cerrar_leccion" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_configuracion"
+        android:title="@string/menu_configuracion"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/opcion_configurar_jdk"
+                android:title="@string/configurar_jdk" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_bd"
+        android:title="@string/menu_bd"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/opcion_importar_leccion"
+                android:title="@string/importar_leccion" />
+            <item
+                android:id="@+id/opcion_seleccionar_leccion_bd"
+                android:title="@string/seleccionar_leccion_bd" />
+            <item
+                android:id="@+id/opcion_eliminar_leccion_bd"
+                android:title="@string/eliminar_leccion_bd" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_historial"
+        android:title="@string/menu_historial"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/opcion_ver_historial"
+                android:title="@string/ver_historial" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/opcion_ayuda"
+        android:title="@string/menu_ayuda"
+        app:showAsAction="never" />
+
+</menu>

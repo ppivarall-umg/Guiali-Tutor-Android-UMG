@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Guali Tutor</string>
+    <string name="leccion_activa">Lección Activa</string>
+    <string name="sin_leccion">(ninguna)</string>
+    <string name="panel_leccion_vacio">Abra una lección desde el menú Lección > Abrir Lección.</string>
+    <string name="hint_editor">Escriba aquí su código Java</string>
+    <string name="compilar">Compilar</string>
+    <string name="ejecutar">Ejecutar</string>
+    <string name="consola_inicial">Consola: aquí se mostrará la salida de la compilación y de la ejecución.</string>
+    <string name="menu_leccion">Lección</string>
+    <string name="abrir_leccion">Abrir Lección</string>
+    <string name="cerrar_leccion">Cerrar Lección</string>
+    <string name="menu_configuracion">Configuración</string>
+    <string name="configurar_jdk">Configurar JDK</string>
+    <string name="menu_bd">Base de Datos</string>
+    <string name="importar_leccion">Importar Lección a BD</string>
+    <string name="seleccionar_leccion_bd">Seleccionar Lección de BD</string>
+    <string name="eliminar_leccion_bd">Eliminar Lección de BD</string>
+    <string name="menu_historial">Historial</string>
+    <string name="ver_historial">Ver Historial</string>
+    <string name="menu_ayuda">Ayuda</string>
+</resources>

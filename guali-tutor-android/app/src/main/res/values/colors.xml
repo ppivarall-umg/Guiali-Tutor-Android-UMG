@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="gris_borde">#FF9E9E9E</color>
+    <color name="consola_fondo">#FF1E1E1E</color>
+    <color name="consola_texto">#FFD4D4D4</color>
+</resources>
