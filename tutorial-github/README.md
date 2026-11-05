@@ -71,17 +71,21 @@ No hace falta instalar un JDK por separado: Android Studio trae el suyo incluido
 
 2. Ejecute el instalador descargado (en Windows, un archivo `.exe`). Presione **Next** en cada pantalla y deje marcados los componentes **Android Studio** y **Android Virtual Device**. Presione **Install** y luego **Finish**.
 
-> **Captura 02:** Asistente de instalación de Android Studio.
-
-![Captura 02](img/02-instalador.png)
-
-3. Al abrir Android Studio por primera vez, aparece un asistente de configuración. Elija la instalación **Standard**, seleccione el tema que prefiera y acepte las licencias. Android Studio descargará el SDK; este proceso puede tardar varios minutos.
-
-> **Captura 03:** Asistente de configuración inicial de Android Studio.
-
-![Captura 03](img/03-asistente-inicial.png)
-
+3. Al abrir Android Studio por primera vez, puede aparecer un asistente de configuración. Elija la instalación **Standard**, seleccione el tema que prefiera y acepte las licencias. Android Studio descargará el SDK; este proceso puede tardar varios minutos.
 4. Al terminar, se muestra la pantalla de bienvenida con el botón **New Project**.
+
+### 3.1 Verificar el Android SDK
+
+El SDK son las librerías que Android Studio necesita para compilar la aplicación. Si el asistente se omitió, o si más adelante aparece el error `SDK location not found`, se configura así:
+
+1. Abra **File > Settings > Languages & Frameworks > Android SDK**.
+2. Revise que el campo **Android SDK Location** tenga una ruta (por ejemplo `C:\Users\SuUsuario\AppData\Local\Android\Sdk`). Si está vacío, presione **Edit** y siga el asistente.
+3. En la pestaña **SDK Platforms**, marque **Android 15.0 (API 35)** y presione **Apply** para instalarlo. Acepte la licencia y espere a que termine.
+
+> **Captura 02:** Ventana Android SDK con la ruta del SDK y la plataforma API 35 instalada.
+
+![Captura 02](img/02-sdk-manager.png)
+
 
 > En macOS y Linux el proceso es equivalente: se descarga el paquete correspondiente desde la misma página y se sigue el asistente.
 
@@ -92,9 +96,9 @@ No hace falta instalar un JDK por separado: Android Studio trae el suyo incluido
 3. Elija un teléfono, por ejemplo **Pixel 6**, y presione **Next**.
 4. Elija una imagen del sistema (por ejemplo la más reciente con el ícono de descarga). Si no está descargada, presione **Download** y espere. Luego presione **Next** y **Finish**.
 
-> **Captura 04:** Dispositivo virtual creado en el Device Manager.
+> **Captura 03:** Dispositivo virtual creado en el Device Manager.
 
-![Captura 04](img/04-crear-emulador.png)
+![Captura 03](img/03-crear-emulador.png)
 
 > Si se prefiere usar un celular real, active en el teléfono las **Opciones de desarrollador** y la **Depuración USB**, y conéctelo a la computadora con un cable.
 
@@ -103,9 +107,9 @@ No hace falta instalar un JDK por separado: Android Studio trae el suyo incluido
 1. En la pantalla de bienvenida presione **New Project**.
 2. En la lista de plantillas elija **Empty Views Activity** y presione **Next**.
 
-> **Captura 05:** Selección de la plantilla Empty Views Activity.
+> **Captura 04:** Selección de la plantilla Empty Views Activity.
 
-![Captura 05](img/05-plantilla.png)
+![Captura 04](img/04-plantilla.png)
 
 3. Complete los datos del proyecto:
 
@@ -118,9 +122,9 @@ No hace falta instalar un JDK por separado: Android Studio trae el suyo incluido
 | Minimum SDK | **API 24** |
 | Build configuration language | **Kotlin DSL (build.gradle.kts)** |
 
-> **Captura 06:** Datos del proyecto en el asistente.
+> **Captura 05:** Datos del proyecto en el asistente.
 
-![Captura 06](img/06-datos-proyecto.png)
+![Captura 05](img/05-datos-proyecto.png)
 
 4. Presione **Finish** y espere a que Android Studio termine de preparar el proyecto (barra de progreso inferior). La primera vez puede tardar varios minutos porque descarga dependencias.
 5. En el panel izquierdo cambie la vista a **Project** (o deje **Android**) y localice las carpetas principales:
@@ -133,9 +137,9 @@ No hace falta instalar un JDK por separado: Android Studio trae el suyo incluido
 | `app/src/main/res/menu/` | Menús (se crea en el paso 7) |
 | `app/src/main/res/drawable/` | Imágenes y formas (se crea en el paso 6.4) |
 
-> **Captura 07:** Estructura inicial del proyecto en Android Studio.
+> **Captura 06:** Estructura inicial del proyecto en Android Studio.
 
-![Captura 07](img/07-estructura-inicial.png)
+![Captura 06](img/06-estructura-inicial.png)
 
 ## 6. Textos, colores y tema
 
@@ -168,9 +172,9 @@ Abra `app/src/main/res/values/strings.xml` y **reemplace todo su contenido** por
 </resources>
 ```
 
-> **Captura 08:** Archivo strings.xml con los textos de la aplicación.
+> **Captura 07:** Archivo strings.xml con los textos de la aplicación.
 
-![Captura 08](img/08-strings.png)
+![Captura 07](img/07-strings.png)
 
 ### 6.2 Colores (`colors.xml`)
 
@@ -199,9 +203,9 @@ Abra `app/src/main/res/values/themes.xml` y reemplace todo su contenido por:
 
 El nombre del tema (`Theme.GualiTutor`) debe ser el mismo que usa el archivo `AndroidManifest.xml` en `android:theme`; el asistente lo crea con ese nombre cuando el proyecto se llama `Guali Tutor`. Este tema no tiene barra superior propia, porque la aplicación usa su propia barra de menú (paso 7). Si el proyecto tiene una carpeta `values-night`, con un archivo `themes.xml` dentro, **elimínela** (clic derecho > Delete). Así la aplicación siempre se ve con el tema claro.
 
-> **Captura 09:** Archivo themes.xml con el tema de la aplicación.
+> **Captura 08:** Archivo themes.xml con el tema de la aplicación.
 
-![Captura 09](img/09-tema.png)
+![Captura 08](img/08-tema.png)
 
 ### 6.4 Borde de los paneles
 
@@ -302,9 +306,9 @@ La barra de menú se define en un archivo XML y se muestra en el menú desplegab
 
 Cada `<item>` con otro `<menu>` adentro es un menú con submenú (por ejemplo, **Lección** tiene **Abrir Lección** y **Cerrar Lección**). El atributo `android:id` es el nombre con el que el código Kotlin identifica cada opción.
 
-> **Captura 10:** Archivo menu_principal.xml con las opciones del menú.
+> **Captura 09:** Archivo menu_principal.xml con las opciones del menú.
 
-![Captura 10](img/10-menu.png)
+![Captura 09](img/09-menu.png)
 
 ## 8. Pantalla principal (layout)
 
@@ -335,9 +339,9 @@ Abra `activity_main.xml`. Si está en la vista **Design**, cambie a la vista **C
 - `LinearLayout` con `android:orientation="vertical"` coloca todos los elementos uno debajo del otro.
 - `MaterialToolbar` es la barra superior. Su `id` es `barraMenu`.
 
-> **Captura 11:** Vista Design con la barra de menú.
+> **Captura 10:** Vista Design con la barra de menú.
 
-![Captura 11](img/11-layout-barra.png)
+![Captura 10](img/10-layout-barra.png)
 
 ### 8.2 Título de lección activa
 
@@ -469,9 +473,9 @@ El botón **Ejecutar** empieza deshabilitado (`android:enabled="false"`).
 
 Es un `ScrollView` con fondo oscuro y texto claro. Los mensajes se escribirán en `tvConsola`.
 
-> **Captura 12:** Vista Design con todos los elementos de la pantalla.
+> **Captura 11:** Vista Design con todos los elementos de la pantalla.
 
-![Captura 12](img/12-layout-completo.png)
+![Captura 11](img/11-layout-completo.png)
 
 ## 9. Código Kotlin de la pantalla
 
@@ -505,9 +509,9 @@ Este código solo hace dos cosas:
 
 Los botones **Compilar** y **Ejecutar** y las opciones del menú todavía no tienen código, por eso al presionarlos no pasa nada. Esa parte es el funcionamiento, que no forma parte de este front end.
 
-> **Captura 13:** Archivo MainActivity.kt con el código de la pantalla.
+> **Captura 12:** Archivo MainActivity.kt con el código de la pantalla.
 
-![Captura 13](img/13-mainactivity.png)
+![Captura 12](img/12-mainactivity.png)
 
 ## 10. Ejecutar la aplicación
 
@@ -515,15 +519,15 @@ Los botones **Compilar** y **Ejecutar** y las opciones del menú todavía no tie
 2. Presione el botón verde **Run** (▶). La primera vez, el emulador tarda en iniciar.
 3. Cuando termine, la aplicación se muestra en el emulador.
 
-> **Captura 14:** Pantalla principal de Guali Tutor en el emulador.
+> **Captura 13:** Pantalla principal de Guali Tutor en el emulador.
 
-![Captura 14](img/14-pantalla-principal.png)
+![Captura 13](img/13-pantalla-principal.png)
 
 4. Presione los tres puntos de la barra superior para ver el menú.
 
-> **Captura 15:** Menú desplegado con Lección, Configuración, Base de Datos, Historial y Ayuda.
+> **Captura 14:** Menú desplegado con Lección, Configuración, Base de Datos, Historial y Ayuda.
 
-![Captura 15](img/15-menu-desplegado.png)
+![Captura 14](img/14-menu-desplegado.png)
 
 5. Revise que estén todos los elementos: barra de menú, título de lección activa, panel de lección, editor de código, botones **Compilar** y **Ejecutar** y panel de consola.
 
@@ -537,6 +541,7 @@ Los botones **Compilar** y **Ejecutar** y las opciones del menú todavía no tie
 | `Unresolved reference` o `Cannot resolve symbol` en el menú o el layout | Revise que el archivo `strings.xml` y `colors.xml` se reemplazaron completos (pasos 6.1 y 6.2) |
 | El texto aparece casi invisible o el fondo es oscuro | Elimine la carpeta `values-night` (paso 6.3) |
 | El emulador no inicia o va muy lento | Cierre otros programas y revise que la virtualización esté activada en la BIOS; use una imagen del sistema más ligera |
+| `SDK location not found` al sincronizar | Configure el SDK como en el paso 3.1. Si sigue el error, cree en la carpeta raíz del proyecto un archivo `local.properties` con la línea `sdk.dir=C\:\\Users\\SuUsuario\\AppData\\Local\\Android\\Sdk` (con la ruta de su SDK) y sincronice otra vez |
 | La descarga de Gradle falla | Revise la conexión a internet y vuelva a presionar **Sync Project with Gradle Files** |
 | La barra queda debajo de la barra de estado del teléfono | Revise que el `LinearLayout` principal tenga `android:fitsSystemWindows="true"` |
 
